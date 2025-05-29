@@ -26,7 +26,7 @@ GOOGLE_MAP_ID={Google Maps Map ID}
 
 You can get them from:
 
-* [IPData API key|https://www.ipdata.co]
-* [OpenAI API key|https://platform.openai.com/api-keysstyles]
-* [Google Maps API key|https://developers.google.com/maps/documentation/javascript/get-api-key]
-* [Google Maps Map ID|https://console.cloud.google.com/google/maps-apis/studio/styles]
+* [IPData API key](https://www.ipdata.co)
+* [OpenAI API key](https://platform.openai.com/api-keysstyles)
+* [Google Maps API key](https://developers.google.com/maps/documentation/javascript/get-api-key)
+* [Google Maps Map ID](https://console.cloud.google.com/google/maps-apis/studio/styles)
