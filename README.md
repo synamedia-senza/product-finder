@@ -18,8 +18,15 @@ The left and right arrows jump backwards and forwards by three seconds.
 Create a `.env` file with these values:
 
 ```
-IPDATA_API_KEY={ipdata.co API key}
+IPDATA_API_KEY={IPData API key}
 OPENAI_API_KEY={OpenAI API key}
 GOOGLE_MAPS_API_KEY={Google Maps API key}
-GOOGLE_MAP_ID={Google Maps [Map ID|https://console.cloud.google.com/google/maps-apis/studio/styles]}
+GOOGLE_MAP_ID={Google Maps Map ID}
 ````
+
+You can get them from:
+
+* [IPData API key|https://www.ipdata.co]
+* [OpenAI API key|https://platform.openai.com/api-keysstyles]
+* [Google Maps API key|https://developers.google.com/maps/documentation/javascript/get-api-key]
+* [Google Maps Map ID|https://console.cloud.google.com/google/maps-apis/studio/styles]
