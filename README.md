@@ -21,5 +21,5 @@ Create a `.env` file with these values:
 IPDATA_API_KEY={ipdata.co API key}
 OPENAI_API_KEY={OpenAI API key}
 GOOGLE_MAPS_API_KEY={Google Maps API key}
-GOOGLE_MAP_ID={Google Maps Map ID}
+GOOGLE_MAP_ID={Google Maps [Map ID|https://console.cloud.google.com/google/maps-apis/studio/styles]}
 ````
