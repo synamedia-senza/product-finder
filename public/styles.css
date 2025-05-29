@@ -21,8 +21,8 @@ html, body {
 
 #map {
   position: absolute;
-  width: 384px; /* 20% of 1920 */
-  height: 216px; /* 20% of 1080 */
+  width: 480px; /* 25% of 1920 */
+  height: 270px; /* 25% of 1080 */
   bottom: 40px;
   right: 40px;
   border-radius: 12px;
@@ -47,8 +47,8 @@ html, body {
 }
 
 #map.loaded {
-  width: 768px; /* 40% of 1920 */
-  height: 432px; /* 40% of 1080 */
+  width: 960px; /* 50% of 1920 */
+  height: 540px; /* 50% of 1080 */
 }
 
 #preview {
