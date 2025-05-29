@@ -1,0 +1,104 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  overflow: hidden;
+}
+
+#video-container {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  margin: 0 auto;
+}
+
+#video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+#map {
+  position: absolute;
+  width: 384px; /* 20% of 1920 */
+  height: 216px; /* 20% of 1080 */
+  bottom: 40px;
+  right: 40px;
+  border-radius: 12px;
+  background-color: #111;
+  color: white;
+  font-family: sans-serif;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 10;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: width 0.5s ease, height 0.5s ease;
+}
+
+#map-canvas {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  z-index: 4;
+}
+
+#map.loaded {
+  width: 768px; /* 40% of 1920 */
+  height: 432px; /* 40% of 1080 */
+}
+
+#preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: none;
+  z-index: 5;
+}
+
+#spinner {
+  border: 6px solid rgba(255, 255, 255, 0.2);
+  border-top: 6px solid white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  display: none;
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  z-index: 6;
+}
+
+#map.searching #spinner {
+  display: block;
+}
+
+#map.searching #map-text {
+  display: none;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.gm-style-mtc, /* map type controls */
+.gm-fullscreen-control, /* fullscreen */
+.gmnoprint[controlwidth], /* zoom +/- buttons */
+.gm-svpc, /* pegman & street view */
+.gm-style-cc { /* copyright */
+  display: none !important;
+}
+
+canvas {
+  display: none;
+}
