@@ -43,25 +43,6 @@ app.post("/api/identify", async (req, res) => {
   }
 });
 
-function obfuscate(str) {
-  return Buffer.from(str).toString("base64").split("").reverse().join("");
-}
-
-function deobfuscate(str) {
-  return Buffer.from(str.split("").reverse().join(""), "base64").toString();
-}
-
-app.get("/api/ipdata-key", (req, res) => {
-  const key = obfuscate(process.env.IPDATA_API_KEY);
-  res.json({ key });
-});
-
-app.get("/api/maps-key", (req, res) => {
-  const key = obfuscate(process.env.GOOGLE_MAPS_API_KEY);
-  const mapId = obfuscate(process.env.GOOGLE_MAP_ID);
-  res.json({ key, mapId });
-});
-
 app.get("/api/find-place", async (req, res) => {
   try {
     const { query } = req.query;
@@ -84,6 +65,25 @@ app.get("/api/find-place", async (req, res) => {
     res.status(500).json({ error: "Failed to find place." });
   }
 });
+
+app.get("/api/ipdata-key", (req, res) => {
+  const key = obfuscate(process.env.IPDATA_API_KEY);
+  res.json({ key });
+});
+
+app.get("/api/maps-key", (req, res) => {
+  const key = obfuscate(process.env.GOOGLE_MAPS_API_KEY);
+  const mapId = obfuscate(process.env.GOOGLE_MAP_ID);
+  res.json({ key, mapId });
+});
+
+function obfuscate(str) {
+  return Buffer.from(str).toString("base64").split("").reverse().join("");
+}
+
+function deobfuscate(str) {
+  return Buffer.from(str.split("").reverse().join(""), "base64").toString();
+}
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
