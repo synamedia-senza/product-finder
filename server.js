@@ -20,24 +20,19 @@ app.use(express.static(path.join(__dirname, "public")));
 app.post("/api/identify", async (req, res) => {
   try {
     const imageData = req.body.image;
-
+    const prompt = "What is the brand or name of the most identifiable product in this image? Respond with only the product name.";
     const response = await openai.chat.completions.create({
       model: "gpt-4o",
+      max_tokens: 100,
       messages: [
         {
           role: "user",
           content: [
-            { type: "text", text: "What is the brand or name of the most identifiable product in this image? Respond with only the product name." },
-            {
-              type: "image_url",
-              image_url: {
-                url: imageData
-              },
-            },
-          ],
-        },
-      ],
-      max_tokens: 100,
+            {type: "text", text:  prompt},
+            {type: "image_url", image_url: {url: imageData}},
+          ]
+        }
+      ]
     });
 
     const answer = response.choices[0].message.content;

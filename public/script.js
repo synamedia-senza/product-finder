@@ -89,10 +89,6 @@ async function identifyProduct(imageData) {
   return result.product;
 }
 
-function decode(str) {
-  return atob(str.split("").reverse().join(""));
-}
-
 async function getCurrentCity() {
   const res = await fetch('/api/ipdata-key');
   const { key } = await res.json();
@@ -169,4 +165,8 @@ async function showOnMap(store) {
   });
 
   markerInstance.setMap(mapInstance);
+}
+
+function decode(str) {
+  return atob(str.split("").reverse().join(""));
 }
